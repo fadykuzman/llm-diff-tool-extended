@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Model Response Diff Tool</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>LLM Model Response Diff Tool</h1>
+
+    <div class="config-section">
+      <div class="config-row">
+        <div class="config-group">
+          <label for="endpoint1">Model 1 Endpoint:</label>
+          <input type="text" id="endpoint1" placeholder="https://api.openai.com/v1/chat/completions"
+            value="https://api.openai.com/v1/chat/completions">
+        </div>
+        <div class="config-group">
+          <label for="endpoint2">Model 2 Endpoint:</label>
+          <input type="text" id="endpoint2" placeholder="https://api.anthropic.com/v1/messages"
+            value="https://api.anthropic.com/v1/messages">
+        </div>
+      </div>
+
+      <div class="config-row">
+        <div class="config-group">
+          <label for="apikey1">Model 1 API Key:</label>
+          <input type="password" id="apikey1" placeholder="sk-...">
+        </div>
+        <div class="config-group">
+          <label for="apikey2">Model 2 API Key:</label>
+          <input type="password" id="apikey2" placeholder="sk-...">
+        </div>
+      </div>
+
+      <div class="config-row">
+        <div class="config-group">
+          <label for="model1">Model 1 Name:</label>
+          <input type="text" id="model1" placeholder="gpt-4" value="gpt-4">
+        </div>
+        <div class="config-group">
+          <label for="model2">Model 2 Name:</label>
+          <input type="text" id="model2" placeholder="claude-3-sonnet-20240229" value="claude-3-sonnet-20240229">
+        </div>
+      </div>
+
+      <div class="config-group">
+        <label for="prompt">Prompt:</label>
+        <textarea id="prompt" placeholder="Enter your prompt here...">Explain the concept of machine learning in simple
+          terms.</textarea>
+      </div>
+
+      <div class="config-group">
+        <div class="toggle-container">
+          <input type="checkbox" id="highlightToggle" checked>
+          <label for="highlightToggle" class="toggle-label">
+            <span class="toggle-text">Enable Difference Highlighting</span>
+            <span class="toggle-switch"></span>
+          </label>
+        </div>
+      </div>
+
+      <button class="compare-btn" onclick="compareResponses()">Compare Responses</button>
+    </div>
+
+    <div id="loading" class="loading" style="display: none;">
+      <div class="spinner"></div>
+      <p>Comparing responses...</p>
+    </div>
+
+    <div id="results" class="results" style="display: none;">
+      <div class="metrics">
+        <div class="metric-card">
+          <div class="metric-title">Model 1 Metrics</div>
+          <div id="metrics1"></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">Model 2 Metrics</div>
+          <div id="metrics2"></div>
+        </div>
+      </div>
+
+      <div class="responses">
+        <div class="response-card">
+          <div class="response-title">Model 1 Response</div>
+          <div id="response1" class="response-content"></div>
+        </div>
+        <div class="response-card">
+          <div class="response-title">Model 2 Response</div>
+          <div id="response2" class="response-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/main.js">
+</body >
+
+</html >
