@@ -1,0 +1,28 @@
+{
+  "name": "llm-diff-tool-extended",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A modern web application for comparing responses from different Large Language Models (LLMs) side-by-side. Compare OpenAI GPT models with Anthropic Claude, analyze performance metrics, and visualize differences with highlighting.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fadykuzman/llm-diff-tool-extended.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fadykuzman/llm-diff-tool-extended/issues"
+  },
+  "homepage": "https://github.com/fadykuzman/llm-diff-tool-extended#readme",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  }
+}
